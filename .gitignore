@@ -1,0 +1,5 @@
+**/.terraform/
+*.tfstate
+*.tfstate.backup
+**/*.tfvars        # may contain secrets
+.terraform.lock.hcl  # optional, some commit this
