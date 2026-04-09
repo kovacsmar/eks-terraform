@@ -1,20 +1,22 @@
 variable "vpc_name" {
-  description = "The name of the VPC used by EKS."
+  description = "Name of the VPC"
   default     = "eks-vpc"
   type        = string
 }
 
 variable "region" {
-  description = "The region where the VPC is created."
+  description = "AWS region for the VPC"
   type        = string
 }
 
 variable "environment" {
-  description = "Environment tag of VPC."
+  description = "Environment name for tagging"
   type        = string
 }
 
-variable "cluster_name" {
-  description = "The EKS cluster name that uses the VPC."
+variable "vpc_cidr" {
+  description = "CIDR block for the VPC, minimum /17 subnet needed to fit addresses"
+  default     = "10.0.0.0/16"
   type        = string
 }
+

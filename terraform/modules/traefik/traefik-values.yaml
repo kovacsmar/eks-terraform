@@ -1,0 +1,13 @@
+deployment:
+  replicas: 1
+
+service:
+  type: LoadBalancer
+
+persistence:
+  enabled: false
+
+tlsStore:
+  default:
+    defaultCertificate:
+      secretName: ${secretname}
