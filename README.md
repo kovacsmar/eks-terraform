@@ -27,7 +27,7 @@ This project provides a baseline Terraform configuration to deploy an Amazon EKS
 
 - KMS encryption for Kubernetes secrets
 - IRSA (IAM Roles for Service Accounts) for IAM permissions
-- TLS termination at Traefik ingress (manual setup, for production use automated certificate generatin)
+- TLS termination at Traefik ingress (manual setup, for production use automated certificate generation)
 - Worker nodes in private subnets
 - VPC endpoints for S3 (private access)
 
