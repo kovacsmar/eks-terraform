@@ -2,7 +2,7 @@
 
 Baseline EKS cluster with Traefik ingress controller and ArgoCD for GitOps deployment.
 
-> **Disclaimer:** This is not a production ready cluster. To make it production ready you have to further configurations to do.
+> **Disclaimer:** This is not a production ready cluster. To make it production ready you have to do further configurations.
 
 ## Overview
 
@@ -25,9 +25,9 @@ This project provides a baseline Terraform configuration to deploy an Amazon EKS
 
 ## Security Features
 
-- KMS encryption for Kubernetes secrets at rest
-- IRSA (IAM Roles for Service Accounts) for fine-grained IAM permissions
-- TLS termination at Traefik ingress
+- KMS encryption for Kubernetes secrets
+- IRSA (IAM Roles for Service Accounts) for IAM permissions
+- TLS termination at Traefik ingress (manual setup, for production use automated certificate generatin)
 - Worker nodes in private subnets
 - VPC endpoints for S3 (private access)
 
@@ -185,13 +185,7 @@ After deployment, get the ArgoCD admin password:
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
 ```
 
-Port-forward to access ArgoCD UI:
-
-```bash
-kubectl -n argocd port-forward svc/argocd-server 8080:443
-```
-
-Access ArgoCD at: `https://argocd.example.com`
+Access ArgoCD at: `https://argocd.example.com` (output will provide the actual url of ArrgoCD)
 
 ## Variable Reference
 
